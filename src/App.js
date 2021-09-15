@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-// import * as THREE from 'three';
+
 import { Canvas, useFrame, useThree, extend } from 'react-three-fiber'
 //useFrame is a React hook used for animation
 //useFrame can only be used in the canvas
@@ -8,6 +8,8 @@ import { useRef } from 'react';
 
 import { OrbitControls }
   from 'three/examples/jsm/controls/OrbitControls';
+import * as THREE from 'three';
+import { AmbientLight } from 'three';
 extend({ OrbitControls });
 
 
@@ -30,9 +32,32 @@ const Box = props => {
   })
 
   return (
-    <mesh ref={ref} {...props}>
+    <mesh
+      ref={ref}
+      {...props}
+      castShadow
+      receiveShadow>
       <boxBufferGeometry />
-      <meshBasicMaterial color='purple' />
+      <meshPhysicalMaterial color='purple' />
+    </mesh>
+  )
+}
+
+const Floor = props => {
+  return (
+    <mesh {...props} receiveShadow>
+      <boxBufferGeometry args={[20, 1, 10]} />
+      <meshPhysicalMaterial />
+    </mesh>
+  )
+}
+
+const Bulb = props => {
+  return (
+    <mesh {...props}>
+      <pointLight castShadow />
+      <sphereBufferGeometry args={[0.2, 20, 20]} />
+      <meshPhongMaterial emissive='yellow' />
     </mesh>
   )
 }
@@ -46,13 +71,17 @@ function App() {
     //Canvas takes the width and height of the parent div
     <div style={{ height: '100vh', width: '100vw' }}>
       <Canvas
+        shadowMap
         style={{ background: 'black' }}
         camera={{ position: [3, 3, 3] }}
-
       >
-        <Box position={[1, 1, 0]} />
+        <ambientLight intensity={0.2} />
+
+        <Bulb position={[0, 3, 0]} />
         <Orbit />
         <axesHelper args={[5]} />
+        <Box position={[-1, 1, 2]} />
+        <Floor position={[0, -0.5, 0]} />
       </Canvas>
     </div>
   );
