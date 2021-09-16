@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { Canvas, useFrame, useThree, extend } from 'react-three-fiber'
+import { Canvas, useFrame, useThree, extend, useLoader } from 'react-three-fiber'
 //useFrame is a React hook used for animation
 //useFrame can only be used in the canvas
-import { useRef } from 'react';
+import { useRef, Suspense } from 'react';
 
 import { OrbitControls }
   from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
-import { AmbientLight } from 'three';
+import { ambientLight } from 'three';
 extend({ OrbitControls });
 
 
@@ -24,9 +24,11 @@ const Orbit = () => {
 //create separate component for the cube
 const Box = props => {
   const ref = useRef();
+  const texture = useLoader(THREE.TextureLoader, '/wood.jpeg');
   //useFrame takes a callback that is called on every render
   useFrame(state => {
     // console.log(state)
+    //this makes it rotate on x and y axis
     ref.current.rotation.x += 0.01;
     ref.current.rotation.y += 0.01;
   })
@@ -36,10 +38,41 @@ const Box = props => {
       ref={ref}
       {...props}
       castShadow
-      receiveShadow>
-      <boxBufferGeometry />
-      <meshPhysicalMaterial color='purple' />
+    // receiveShadow
+    >
+      <sphereBufferGeometry args={[1, 100, 100]} />
+      {/* <boxBufferGeometry /> */}
+      <meshPhysicalMaterial
+        map={texture}
+        // color='white'
+        // // opacity={0.7}
+        // transparent
+        // // wireframe
+        // // metalness={1}
+        // roughness={0}
+        clearcoat={1}
+      // transmission={0.7}
+      // reflectivity={1}
+      // side={THREE.DoubleSide}
+      />
     </mesh>
+  )
+}
+
+const Background = props => {
+  const texture = useLoader(
+    THREE.TextureLoader,
+    '/riverbank.jpeg'
+  );
+
+  const { gl } = useThree()
+
+  const formatted = new THREE.WebGLCubeRenderTarget(
+    texture.image.height).fromEquirectangularTexture(gl, texture)
+
+
+  return (
+    <primitive attach='background' object={formatted} />
   )
 }
 
@@ -75,12 +108,18 @@ function App() {
         style={{ background: 'black' }}
         camera={{ position: [3, 3, 3] }}
       >
+        <fog attach='fog' args={['white', 1, 10]} />
         <ambientLight intensity={0.2} />
 
         <Bulb position={[0, 3, 0]} />
         <Orbit />
         <axesHelper args={[5]} />
-        <Box position={[-1, 1, 2]} />
+        <Suspense fallback={null}>
+          <Box position={[0, 1, 0]} />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Background />
+        </Suspense>
         <Floor position={[0, -0.5, 0]} />
       </Canvas>
     </div>
