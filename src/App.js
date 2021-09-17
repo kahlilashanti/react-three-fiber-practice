@@ -37,12 +37,14 @@ function App() {
         {/* <Bulb position={[0, 3, 0]} /> */}
         <Orbit />
         <axesHelper args={[5]} />
+        <Bulb position={[-6, 3, 0]} />
         <Bulb position={[0, 3, 0]} />
+        <Bulb position={[6, 3, 0]} />
+        <Suspense fallback={null}>
+          <Background />
+        </Suspense>
         <Physics>
           <Cars />
-          <Suspense fallback={null}>
-            <Background />
-          </Suspense>
           <Floor position={[0, -0.5, 0]} />
         </Physics>
       </Canvas>

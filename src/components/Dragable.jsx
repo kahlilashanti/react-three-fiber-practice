@@ -22,7 +22,12 @@ const Dragable = props => {
         //so we can toggle orbit 
         controlsRef.current.addEventListener('hoveron', e => scene.orbitControls.enabled = false)
         controlsRef.current.addEventListener('hoveroff', e => scene.orbitControls.enabled = true);
-        controlsRef.current.addEventListener('dragstart', e => e.object.api?.mass.set(0));
+        controlsRef.current.addEventListener('dragstart', e => {
+            e.object.api?.mass.set(0)
+            //isolate what part of the mesh is the object you want to change the color of
+            // console.log(e.object)
+
+        });
         controlsRef.current.addEventListener('dragend', e => e.object.api?.mass.set(1));
         // controlsRef.current.addEventListener('drag', e => console.log(e.object));
         controlsRef.current.addEventListener('drag', e => {

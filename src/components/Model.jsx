@@ -6,7 +6,7 @@ const Model = props => {
         GLTFLoader,
         props.path
     )
-    console.log(model)
+    // console.log(model)
     return (
         <primitive
             object={model.scene}
