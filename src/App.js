@@ -4,6 +4,7 @@ import './App.css';
 import { Canvas } from 'react-three-fiber'
 //useFrame is a React hook used for animation
 //useFrame can only be used in the canvas
+import { Physics } from 'use-cannon';
 import { Suspense } from 'react';
 import Box from './components/Box'
 import Orbit from './components/Orbit'
@@ -28,25 +29,27 @@ function App() {
         style={{ background: 'black' }}
         camera={{ position: [7, 7, 7] }}
       >
-        <fog attach='fog' args={['white', 1, 10]} />
+        {/* <fog attach='fog' args={['white', 1, 10]} /> */}
         <ambientLight intensity={0.2} />
 
         {/* <Bulb position={[0, 3, 0]} /> */}
         <Orbit />
         <axesHelper args={[5]} />
-        <Dragable>
-          <Bulb position={[0, 3, 0]} />
+        <Physics>
+          <Dragable>
+            <Bulb position={[0, 3, 0]} />
+            <Suspense fallback={null}>
+              <Box position={[-4, 1, 0]} />
+            </Suspense>
+            <Suspense fallback={null}>
+              <Box position={[4, 1, 0]} />
+            </Suspense>
+          </Dragable>
           <Suspense fallback={null}>
-            <Box position={[-4, 1, 0]} />
+            <Background />
           </Suspense>
-          <Suspense fallback={null}>
-            <Box position={[4, 1, 0]} />
-          </Suspense>
-        </Dragable>
-        <Suspense fallback={null}>
-          <Background />
-        </Suspense>
-        <Floor position={[0, -0.5, 0]} />
+          <Floor position={[0, -0.5, 0]} />
+        </Physics>
       </Canvas>
     </div>
   );
