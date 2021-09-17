@@ -53,14 +53,14 @@ const ColorPicker = props => {
                     width: 50
                 }}
             ></div>
-            <div
+            {/* <div
                 onClick={handleClick}
                 style={{
                     background: 'white',
                     height: 50,
                     width: 50
                 }}
-            ></div>
+            ></div> */}
         </div>
 
     )
