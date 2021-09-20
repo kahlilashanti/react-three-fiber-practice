@@ -1,6 +1,6 @@
 {
-  "homepage": "https://kahlilashanti.github.io/fibre-playground",
-  "name": "fibre-playground",
+  "homepage": "https://kahlilashanti.github.io/react-three-fiber-practice",
+  "name": "react-three-fiber-practice",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
