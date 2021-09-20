@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 const Background = props => {
     const texture = useLoader(
         THREE.TextureLoader,
-        '/riverbank.jpeg'
+        process.env.PUBLIC_URL + '/riverbank.jpeg'
     );
 
     const { gl } = useThree()

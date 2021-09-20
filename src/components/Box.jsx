@@ -7,7 +7,8 @@ import { useBox } from 'use-cannon';
 
 const Box = props => {
     const [ref, api] = useBox(() => ({ mass: 1, ...props }))
-    const texture = useLoader(THREE.TextureLoader, '/wood.jpeg');
+    const texture = useLoader(THREE.TextureLoader,
+        process.env.PUBLIC_URL + '/wood.jpeg');
     //useFrame takes a callback that is called on every render
     // useFrame(state => {
     //     // console.log(state)

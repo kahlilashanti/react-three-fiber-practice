@@ -18,6 +18,7 @@ import CameraButtons from './components/CameraButtons';
 import state from './state';
 import Lights from './components/Lights';
 import { EffectComposer, DepthOfField, Bloom } from 'react-postprocessing';
+//to prepare for production we need a public url for any files we are importing from our public folder
 
 function App() {
   //CREATED SCENE USING REACT THREE FIBER

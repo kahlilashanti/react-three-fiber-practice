@@ -5,7 +5,7 @@ import * as THREE from 'three';
 const Model = props => {
     const model = useLoader(
         GLTFLoader,
-        props.path
+        process.env.PUBLIC_URL + props.path
     )
     //to get a visual of everything that's available within the model including animation properties
     //if there is animation you'll notice an array called animation
