@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/fibre-playground/static/css/main.a617e044.chunk.css",
-    "main.js": "/fibre-playground/static/js/main.c30d81f7.chunk.js",
-    "main.js.map": "/fibre-playground/static/js/main.c30d81f7.chunk.js.map",
-    "runtime-main.js": "/fibre-playground/static/js/runtime-main.034a8ad8.js",
-    "runtime-main.js.map": "/fibre-playground/static/js/runtime-main.034a8ad8.js.map",
-    "static/js/2.5ee40c71.chunk.js": "/fibre-playground/static/js/2.5ee40c71.chunk.js",
-    "static/js/2.5ee40c71.chunk.js.map": "/fibre-playground/static/js/2.5ee40c71.chunk.js.map",
-    "static/js/3.b7bb8927.chunk.js": "/fibre-playground/static/js/3.b7bb8927.chunk.js",
-    "static/js/3.b7bb8927.chunk.js.map": "/fibre-playground/static/js/3.b7bb8927.chunk.js.map",
-    "static/js/4.3b9914eb.chunk.js": "/fibre-playground/static/js/4.3b9914eb.chunk.js",
-    "static/js/4.3b9914eb.chunk.js.map": "/fibre-playground/static/js/4.3b9914eb.chunk.js.map",
-    "index.html": "/fibre-playground/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/fibre-playground/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.5ee40c71.chunk.js.LICENSE.txt": "/fibre-playground/static/js/2.5ee40c71.chunk.js.LICENSE.txt"
+    "main.css": "/react-three-fiber-practice/static/css/main.a617e044.chunk.css",
+    "main.js": "/react-three-fiber-practice/static/js/main.548f7110.chunk.js",
+    "main.js.map": "/react-three-fiber-practice/static/js/main.548f7110.chunk.js.map",
+    "runtime-main.js": "/react-three-fiber-practice/static/js/runtime-main.9c0c7dce.js",
+    "runtime-main.js.map": "/react-three-fiber-practice/static/js/runtime-main.9c0c7dce.js.map",
+    "static/js/2.a85d0665.chunk.js": "/react-three-fiber-practice/static/js/2.a85d0665.chunk.js",
+    "static/js/2.a85d0665.chunk.js.map": "/react-three-fiber-practice/static/js/2.a85d0665.chunk.js.map",
+    "static/js/3.78db676c.chunk.js": "/react-three-fiber-practice/static/js/3.78db676c.chunk.js",
+    "static/js/3.78db676c.chunk.js.map": "/react-three-fiber-practice/static/js/3.78db676c.chunk.js.map",
+    "static/js/4.eef412fa.chunk.js": "/react-three-fiber-practice/static/js/4.eef412fa.chunk.js",
+    "static/js/4.eef412fa.chunk.js.map": "/react-three-fiber-practice/static/js/4.eef412fa.chunk.js.map",
+    "index.html": "/react-three-fiber-practice/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/react-three-fiber-practice/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.a85d0665.chunk.js.LICENSE.txt": "/react-three-fiber-practice/static/js/2.a85d0665.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.034a8ad8.js",
-    "static/js/2.5ee40c71.chunk.js",
+    "static/js/runtime-main.9c0c7dce.js",
+    "static/js/2.a85d0665.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.c30d81f7.chunk.js"
+    "static/js/main.548f7110.chunk.js"
   ]
 }
